@@ -1,5 +1,5 @@
 const VALID_EMAIL = "230408003@st.biruni.edu.tr";
-const VALID_PASSWORD = "123456istanbul";
+const VALID_PASSWORD = "demo123456";
 
 export async function login(username, password) {
   await new Promise((resolve) => setTimeout(resolve, 500));
