@@ -3,10 +3,13 @@ import { useNavigate, useParams } from "react-router";
 
 import { fetchProduct } from "../api/productsApi";
 import useFetch from "../hooks/useFetch";
+import { useCartStore } from "../store/cartStore";
 
 function ProductDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
+
+  const addItem = useCartStore((state) => state.addItem);
 
   const loadProduct = useCallback(
     (signal) => fetchProduct(id, signal),
@@ -32,7 +35,6 @@ function ProductDetail() {
         <p role="alert">
           Sorry, this product could not be found.
         </p>
-
         <button onClick={() => navigate("/products")}>
           Back to Products
         </button>
@@ -73,14 +75,25 @@ function ProductDetail() {
       />
 
       <h1>{product.title}</h1>
-
       <p>Category: {product.category}</p>
-
       <p>{product.description}</p>
 
       <h2 style={{ color: "#8050AA" }}>
         ${product.price.toFixed(2)}
       </h2>
+
+      <button
+        onClick={() => addItem(product)}
+        style={{
+          backgroundColor: "#8050AA",
+          color: "#FFFFFF",
+          border: "none",
+          padding: "12px 24px",
+          cursor: "pointer",
+        }}
+      >
+        Add to Cart
+      </button>
     </section>
   );
 }
