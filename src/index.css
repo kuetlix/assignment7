@@ -109,3 +109,48 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+:root {
+  font-family: Arial, sans-serif;
+  color: #241a2e;
+  background-color: #f9f5fc;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  color: #f5eaff;
+  background-color: #21172d;
+}
+
+:root[data-theme="dark"] body {
+  background-color: #21172d;
+}
+
+:root[data-theme="dark"] main {
+  color: #f5eaff;
+}
+
+:root[data-theme="dark"] section,
+:root[data-theme="dark"] article {
+  color: #241a2e;
+}
+
+:root[data-theme="dark"] a {
+  color: #c89cf2;
+}
+.store-layout {
+  background-color: #f9f5fc;
+  color: #241a2e;
+}
+
+:root[data-theme="dark"] .store-layout {
+  background-color: #21172d;
+  color: #f5eaff;
+}
+
+:root[data-theme="dark"] .store-layout main {
+  color: #f5eaff;
+}
+
+:root[data-theme="dark"] .store-layout footer {
+  color: #d7b6f1 !important;
+}

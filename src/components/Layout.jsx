@@ -1,68 +1,44 @@
 import { Outlet } from "react-router";
 import NavBar from "./NavBar";
+
 function Layout() {
   return (
     <div
-      className="app-layout"
+      className="store-layout"
       style={{
-        minHeight: "100vh",
         width: "100%",
+        maxWidth: "1400px",
+        minHeight: "100vh",
+        margin: "0 auto",
         display: "flex",
         flexDirection: "column",
-        backgroundColor: "#F9F5FC",
-        color: "#222222",
       }}
     >
-      <header
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          flexWrap: "wrap",
-          gap: "16px",
-          padding: "16px 32px",
-          backgroundColor: "#F1E7F8",
-          borderBottom: "1px solid #E5D9EE",
-        }}
-      >
-        <h1
-          style={{
-            color: "#8050AA",
-            fontSize: "26px",
-            fontWeight: "700",
-            margin: 0,
-          }}
-        >
-          Ketli Store
-        </h1>
-
+      <header>
         <NavBar />
       </header>
+
       <main
         style={{
           flex: 1,
-          width: "100%",
-          boxSizing: "border-box",
-          padding: "32px",
+          padding: "32px 24px",
         }}
       >
         <Outlet />
       </main>
+
       <footer
         style={{
-          padding: "20px 16px",
           textAlign: "center",
-          backgroundColor: "#F1E7F8",
+          padding: "20px",
           borderTop: "1px solid #E5D9EE",
-          color: "#665A70",
-          fontSize: "14px",
+          color: "#8050AA",
         }}
       >
-        <p style={{ margin: 0 }}>
-          © 2026 Ketli Store. All rights reserved.
-        </p>
+        © 2026 Ketli Store. All rights reserved.
       </footer>
     </div>
   );
 }
+
 export default Layout;
